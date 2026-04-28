@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BORJABACK - Paso 3</title>
+    <style>
+        /* 1. RESET PARA QUITAR MARGENES */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: sans-serif;
+            background-color: #fff;
+        }
+
+        /* 2. EL HEADER CON BORDES Y SEPARACIÓN EXTREMA */
+        header {
+            background-color: #ffffff;
+            border-top: 2.5px solid #000000;
+            border-bottom: 2.5px solid #000000;
+            width: 100%;
+            padding: 15px 40px; /* 40px de espacio a los lados */
+            
+            /* Esto empuja el H1 a la izquierda y el NAV a la derecha */
+            display: flex;
+            justify-content: space-between; 
+            align-items: center; /* Centra los textos verticalmente */
+        }
+
+        /* 3. ESTILO DEL H1 (IZQUIERDA) */
+        h1 {
+            font-size: 1.6rem; /* Ajusta el tamaño a tu gusto */
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: -1px;
+        }
+
+        /* 4. ESTILO DEL NAV (DERECHA) */
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #000000;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.8rem; /* Más pequeñito como pediste */
+            transition: color 0.2s;
+        }
+
+        /* Cambio a Rojo */
+        nav ul li a:hover {
+            color: #ff0000;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>BORJABACK BARRERAS AL LIMITE</h1>
+
+        <nav>
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Entrevistas</a></li>
+                <li><a href="#">Videos</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+</body>
+</html>
