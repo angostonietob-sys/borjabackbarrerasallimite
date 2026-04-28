@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BORJABACK - Paso 3</title>
+    <title>BORJABACK - Línea Única</title>
     <style>
-        /* 1. RESET PARA QUITAR MARGENES */
         * {
             margin: 0;
             padding: 0;
@@ -13,51 +12,72 @@
         }
 
         body {
-            font-family: sans-serif;
+            font-family: 'Arial', sans-serif;
             background-color: #fff;
         }
 
-        /* 2. EL HEADER CON BORDES Y SEPARACIÓN EXTREMA */
+        /* HEADER */
         header {
             background-color: #ffffff;
-            border-top: 2.5px solid #000000;
-            border-bottom: 2.5px solid #000000;
+            border-top: 2.5px solid #000;
+            border-bottom: 2.5px solid #000;
             width: 100%;
-            padding: 15px 40px; /* 40px de espacio a los lados */
-            
-            /* Esto empuja el H1 a la izquierda y el NAV a la derecha */
+            padding: 15px 20px; /* Reducido un poco el margen lateral */
             display: flex;
             justify-content: space-between; 
-            align-items: center; /* Centra los textos verticalmente */
+            align-items: center;
+            /* Evitamos que se envuelva, queremos una sola línea */
+            flex-wrap: nowrap; 
         }
 
-        /* 3. ESTILO DEL H1 (IZQUIERDA) */
         h1 {
-            font-size: 1.6rem; /* Ajusta el tamaño a tu gusto */
+            /* Tamaño base para PC */
+            font-size: 1.4rem;
             text-transform: uppercase;
-            font-weight: bold;
-            letter-spacing: -1px;
+            font-weight: 900;
+            white-space: nowrap;
+            margin-right: 10px; /* Espacio mínimo de seguridad */
         }
 
-        /* 4. ESTILO DEL NAV (DERECHA) */
+        /* NAV */
         nav ul {
             display: flex;
             list-style: none;
-            gap: 20px;
+            gap: 15px;
         }
 
         nav ul li a {
             text-decoration: none;
-            color: #000000;
+            color: #000;
             font-weight: bold;
             text-transform: uppercase;
-            font-size: 0.8rem; /* Más pequeñito como pediste */
+            font-size: 0.8rem;
+            white-space: nowrap;
             transition: color 0.2s;
         }
 
-        /* Cambio a Rojo */
         nav ul li a:hover {
             color: #ff0000;
+        }
+
+        /* --- AJUSTE RADICAL PARA MÓVIL (MANTENER LÍNEA) --- */
+        @media (max-width: 600px) {
+            header {
+                padding: 10px 5px; /* Aprovechamos cada milímetro */
+            }
+
+            h1 {
+                font-size: 0.75rem; /* Aquí bajamos el tamaño del H1 a tope */
+                letter-spacing: -0.5px;
+            }
+
+            nav ul {
+                gap: 6px; /* Pegamos un poco más las opciones del menú */
+            }
+
+            nav ul li a {
+                font-size: 0.55rem; /* Menú muy pequeñito para que quepa */
+            }
         }
     </style>
 </head>
@@ -65,13 +85,12 @@
 
     <header>
         <h1>BORJABACK BARRERAS AL LIMITE</h1>
-
         <nav>
             <ul>
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#">Entrevistas</a></li>
-                <li><a href="#">Videos</a></li>
-                <li><a href="#">Contacto</a></li>
+                <li><a href="#">INICIO</a></li>
+                <li><a href="#">ENTREVISTAS</a></li>
+                <li><a href="#">VIDEOS</a></li>
+                <li><a href="#">CONTACTO</a></li>
             </ul>
         </nav>
     </header>
