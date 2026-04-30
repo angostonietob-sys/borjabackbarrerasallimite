@@ -3,81 +3,134 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BORJABACK - Línea Única</title>
+    <title>BORJABACK - BARRERAS AL LIMITE</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        /* 1. RESET Y BASE */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            font-family: 'Arial', sans-serif;
-            background-color: #fff;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: #ffffff;
+            color: #333;
+            line-height: 1.8;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
 
-        /* HEADER */
+        /* 2. HEADER */
         header {
             background-color: #ffffff;
             border-top: 2.5px solid #000;
             border-bottom: 2.5px solid #000;
-            width: 100%;
-            padding: 15px 20px; /* Reducido un poco el margen lateral */
+            padding: 15px 30px;
             display: flex;
             justify-content: space-between; 
             align-items: center;
-            /* Evitamos que se envuelva, queremos una sola línea */
-            flex-wrap: nowrap; 
         }
 
-        h1 {
-            /* Tamaño base para PC */
-            font-size: 1.4rem;
-            text-transform: uppercase;
-            font-weight: 900;
-            white-space: nowrap;
-            margin-right: 10px; /* Espacio mínimo de seguridad */
+        header h1 { font-size: 1.2rem; text-transform: uppercase; font-weight: 800; }
+
+        nav ul { display: flex; list-style: none; gap: 15px; }
+        nav ul li a { text-decoration: none; color: #000; font-weight: 600; font-size: 0.75rem; text-transform: uppercase; }
+
+        /* 3. MEGABANNER CON VÍDEO INCRUSTADO */
+        .seccion-impacto {
+            width: 100%;
+            background-color: #000;
+            padding: 40px 0;
+            border-bottom: 5px solid #ff0000;
         }
 
-        /* NAV */
-        nav ul {
+        .banner-canal {
+            max-width: 1100px;
+            margin: 0 auto;
             display: flex;
-            list-style: none;
-            gap: 15px;
+            align-items: center;
+            padding: 0 20px;
+            gap: 30px;
         }
 
-        nav ul li a {
-            text-decoration: none;
-            color: #000;
-            font-weight: bold;
+        .video-contenedor {
+            flex: 1.5;
+            position: relative;
+            padding-bottom: 30.25%; /* Ratio 16:9 ajustado */
+            height: 0;
+            overflow: hidden;
+            border: 1px solid #333;
+        }
+
+        .video-contenedor iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .banner-canal-info {
+            flex: 1;
+            color: #fff;
+        }
+
+        .etiqueta-roja {
+            background: #ff0000;
+            color: #fff;
+            padding: 4px 10px;
+            font-size: 0.75rem;
+            font-weight: 900;
             text-transform: uppercase;
-            font-size: 0.8rem;
-            white-space: nowrap;
-            transition: color 0.2s;
+            display: inline-block;
+            margin-bottom: 15px;
         }
 
-        nav ul li a:hover {
-            color: #ff0000;
+        .banner-canal-info h3 {
+            font-size: 2rem;
+            line-height: 1.1;
+            font-weight: 900;
+            text-transform: uppercase;
+            margin-bottom: 15px;
         }
 
-        /* --- AJUSTE RADICAL PARA MÓVIL (MANTENER LÍNEA) --- */
-        @media (max-width: 600px) {
-            header {
-                padding: 10px 5px; /* Aprovechamos cada milímetro */
-            }
+        .btn-suscribete {
+            display: inline-block;
+            border: 2.5px solid #fff;
+            color: #fff;
+            text-decoration: none;
+            padding: 12px 30px;
+            font-weight: 800;
+            text-transform: uppercase;
+            transition: 0.3s;
+            margin-top: 15px;
+        }
 
-            h1 {
-                font-size: 0.75rem; /* Aquí bajamos el tamaño del H1 a tope */
-                letter-spacing: -0.5px;
-            }
+        .btn-suscribete:hover { background: #fff; color: #000; }
 
-            nav ul {
-                gap: 6px; /* Pegamos un poco más las opciones del menú */
-            }
+        /* 4. HISTORIA */
+        .contenedor-historia {
+            flex: 1;
+            max-width: 850px;
+            margin: 50px auto;
+            padding: 0 25px;
+            text-align: center;
+        }
 
-            nav ul li a {
-                font-size: 0.55rem; /* Menú muy pequeñito para que quepa */
-            }
+        .foto-perfil-contenedor { margin-bottom: 35px; }
+        .foto-perfil-contenedor img { max-width: 250px; height: auto; border-radius: 5px; }
+
+        .titulo-historia { font-size: 2rem; font-weight: 900; text-transform: uppercase; margin-bottom: 30px; }
+        .texto-largo { font-size: 1.2rem; color: #444; text-align: justify; }
+        .texto-largo p { margin-bottom: 25px; }
+
+        /* 5. FOOTER */
+        footer { border-top: 2.5px solid #000; padding: 25px; text-align: center; font-size: 0.95rem; }
+        footer p { margin-bottom: 5px; }
+
+        /* RESPONSIVE */
+        @media (max-width: 900px) {
+            .banner-canal { flex-direction: column; text-align: center; }
+            .video-contenedor { width: 100%; padding-bottom: 56.25%; }
+            .banner-canal-info { padding: 0; }
         }
     </style>
 </head>
@@ -87,13 +140,47 @@
         <h1>BORJABACK BARRERAS AL LIMITE</h1>
         <nav>
             <ul>
-                <li><a href="#">INICIO</a></li>
-                <li><a href="#">ENTREVISTAS</a></li>
-                <li><a href="#">VIDEOS</a></li>
-                <li><a href="#">CONTACTO</a></li>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Entrevistas</a></li>
+                <li><a href="#">Videos</a></li>
+                <li><a href="#">Contacto</a></li>
             </ul>
         </nav>
     </header>
+
+    <section class="seccion-impacto">
+        <div class="banner-canal">
+            <div class="video-contenedor">
+                <!-- VÍDEO DE VICENTE DEL BOSQUE -->
+                <iframe src="https://www.youtube.com/embed/QRJZDYqhCzE" title="Entrevista Vicente del Bosque" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <div class="banner-canal-info">
+                <span class="etiqueta-roja">ENTREVISTA ESTRELLA</span>
+                <h3>CHARLA CON VICENTE DEL BOSQUE</h3>
+                <p>Una conversación única sobre valores, deporte y superación con una leyenda del fútbol mundial.</p>
+                <a href="https://www.youtube.com/channel/UCJHJqxAVIHJ4c-tcf_VDhdA" target="_blank" class="btn-suscribete">SUSCRÍBETE AL CANAL</a>
+            </div>
+        </div>
+    </section>
+
+    <main class="contenedor-historia">
+        <div class="foto-perfil-contenedor">
+            <img src="fotoborja2.jpg" alt="Borjaback">
+        </div>
+
+        <h2 class="titulo-historia">Mi Historia al Límite</h2>
+
+        <div class="texto-largo">
+            <p>Mi camino empezó con un reto desde el minuto cero. Mi nacimiento no fue como el de los demás, y desde ese primer aliento, la vida me puso delante una serie de barreras que, lejos de frenarme, terminaron por definir quién soy hoy. Crecí lidiando con un entorno que no siempre estaba preparado para recibirme, pero esa misma lucha fue la que prendió la mecha de lo que hoy conocéis como Borjaback. Decidí abrir este canal no por ego, sino por una necesidad brutal de visibilizar la discapacidad desde la verdad, sin adornos ni lástima.</p>
+            <p>El objetivo de este proyecto es ponerle voz a lo que muchos prefieren ignorar: la realidad de la accesibilidad en nuestras calles y en nuestra sociedad. Estamos hartos de ver lugares que se cuelgan la medalla de "accesibles" por poner una rampa impracticable o un baño que no cumple su función. En mis vídeos, muestro lo que es la accesibilidad real frente a la que nos intentan vender. Quiero que el mundo entienda que no pedimos favores, pedimos derechos. Acompáñame en esta misión de derribar muros, denunciar lo injusto y demostrar que siempre se puede vivir al límite.</p>
+            <p>Nada de esto sería posible sin los pilares que me sostienen. Vengo de una familia luchadora que sabe lo que es pelear contra corriente; crecer junto a mi hermano, con su discapacidad intelectual grave y sus valientes batallas de corazón, me enseñó el verdadero significado de la palabra resistencia. Y en este viaje, no estoy solo. Marta fue esa chispa que terminó de darme el impulso necesario para lanzarme a YouTube cuando solo era una idea en mi cabeza. Junto a ella, Dani, Jose y Pablo han sido los amigos más fieles y sinceros que la vida me ha podido dar. Ellos son el motor que me recuerda por qué empecé y por quién sigo dando guerra.</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>Pagina Creada por Borja Angosto Nieto</p>
+        <p>Todos los derechos reservados © 2026</p>
+    </footer>
 
 </body>
 </html>
