@@ -1,0 +1,67 @@
+/* Contenedor para que la historia y el lateral convivan */
+.seccion-biografia {
+    max-width: 1200px;
+    margin: 60px auto;
+    display: flex;
+    gap: 50px;
+    padding: 0 30px;
+    align-items: flex-start;
+}
+
+/* El bloque de tu tío en el lateral izquierdo */
+.promo-tio-lateral {
+    flex: 1;
+    background: #000;
+    color: #fff;
+    padding: 25px;
+    border-left: 8px solid #ff0000; /* La línea roja para que combine con tu web */
+    position: sticky;
+    top: 100px;
+    text-align: left;
+}
+
+.promo-tio-lateral h4 {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    color: #ff0000;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.promo-tio-lateral h3 {
+    font-size: 1.4rem;
+    line-height: 1.2;
+    text-transform: uppercase;
+    font-weight: 900;
+    margin-bottom: 15px;
+}
+
+.btn-pato {
+    display: block;
+    text-align: center;
+    background: #fff;
+    color: #000;
+    text-decoration: none;
+    padding: 12px;
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    margin-top: 20px;
+    transition: 0.3s;
+}
+
+.btn-pato:hover {
+    background: #ff0000;
+    color: #fff;
+}
+
+/* Tu historia a la derecha */
+.columna-derecha-historia {
+    flex: 2;
+}
+
+/* En móvil, el anuncio pasa arriba */
+@media (max-width: 900px) {
+    .seccion-biografia { flex-direction: column-reverse; }
+    .promo-tio-lateral { position: static; width: 100%; }
+}

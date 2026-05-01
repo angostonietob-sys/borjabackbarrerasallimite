@@ -7,130 +7,131 @@
     <style>
         /* 1. RESET Y BASE */
         * { margin: 0; padding: 0; box-sizing: border-box; }
-
         body {
             font-family: 'Segoe UI', Arial, sans-serif;
             background-color: #ffffff;
             color: #333;
-            line-height: 1.8;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
+            line-height: 1.6;
         }
 
-        /* 2. HEADER */
+        /* 2. HEADER CON SUBMENÚ DESPLEGABLE */
         header {
             background-color: #ffffff;
             border-top: 2.5px solid #000;
             border-bottom: 2.5px solid #000;
-            padding: 15px 30px;
+            padding: 15px 40px;
             display: flex;
             justify-content: space-between; 
             align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
+        header h1 { font-size: 1.2rem; text-transform: uppercase; font-weight: 900; }
+        
+        nav ul { display: flex; list-style: none; gap: 20px; align-items: center; }
+        nav ul li { position: relative; } /* Necesario para el desplegable */
+        
+        nav ul li a {
+            text-decoration: none;
+            color: #000;
+            font-weight: 700;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            transition: color 0.3s;
+            display: block;
+        }
+        nav ul li a:hover { color: #ff0000; }
 
-        header h1 { font-size: 1.2rem; text-transform: uppercase; font-weight: 800; }
+        /* ESTILOS DEL SUBMENÚ */
+        .submenu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #fff;
+            border: 2px solid #000;
+            min-width: 140px;
+            list-style: none;
+            z-index: 1001;
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.1);
+        }
+        .submenu li { width: 100%; }
+        .submenu li a {
+            padding: 10px 15px;
+            font-size: 0.75rem;
+            border-bottom: 1px solid #eee;
+            text-transform: uppercase;
+        }
+        .submenu li a:hover { background-color: #f4f4f4; color: #ff0000; }
+        
+        /* Mostrar submenú al pasar el ratón */
+        nav ul li:hover .submenu { display: block; }
 
-        nav ul { display: flex; list-style: none; gap: 15px; }
-        nav ul li a { text-decoration: none; color: #000; font-weight: 600; font-size: 0.75rem; text-transform: uppercase; }
-
-        /* 3. MEGABANNER CON VÍDEO INCRUSTADO */
+        /* 3. BANNER REDUCIDO (VICENTE DEL BOSQUE) */
         .seccion-impacto {
             width: 100%;
             background-color: #000;
-            padding: 40px 0;
-            border-bottom: 5px solid #ff0000;
+            padding: 25px 0;
+            border-bottom: 4px solid #ff0000;
         }
-
         .banner-canal {
-            max-width: 1100px;
+            max-width: 900px;
             margin: 0 auto;
             display: flex;
             align-items: center;
             padding: 0 20px;
-            gap: 30px;
+            gap: 25px;
         }
+        .video-wrapper { flex: 1; box-shadow: 0 8px 20px rgba(0,0,0,0.5); }
+        .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; }
+        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+        
+        .banner-info { flex: 1; color: #fff; }
+        .etiqueta-roja { background: #ff0000; color: #fff; padding: 4px 10px; font-size: 0.65rem; font-weight: 900; margin-bottom: 8px; display: inline-block; }
+        .banner-info h3 { font-size: 1.3rem; line-height: 1.1; font-weight: 900; margin-bottom: 12px; }
+        .btn-yt { display: inline-block; border: 2px solid #fff; color: #fff; text-decoration: none; padding: 10px 25px; font-weight: 900; font-size: 0.9rem; text-transform: uppercase; transition: 0.3s; }
+        .btn-yt:hover { background: #fff; color: #000; }
 
-        .video-contenedor {
-            flex: 1.5;
-            position: relative;
-            padding-bottom: 30.25%; /* Ratio 16:9 ajustado */
-            height: 0;
-            overflow: hidden;
-            border: 1px solid #333;
-        }
-
-        .video-contenedor iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-
-        .banner-canal-info {
-            flex: 1;
-            color: #fff;
-        }
-
-        .etiqueta-roja {
-            background: #ff0000;
-            color: #fff;
-            padding: 4px 10px;
-            font-size: 0.75rem;
-            font-weight: 900;
-            text-transform: uppercase;
-            display: inline-block;
-            margin-bottom: 15px;
-        }
-
-        .banner-canal-info h3 {
-            font-size: 2rem;
-            line-height: 1.1;
-            font-weight: 900;
-            text-transform: uppercase;
-            margin-bottom: 15px;
-        }
-
-        .btn-suscribete {
-            display: inline-block;
-            border: 2.5px solid #fff;
-            color: #fff;
-            text-decoration: none;
-            padding: 12px 30px;
-            font-weight: 800;
-            text-transform: uppercase;
-            transition: 0.3s;
-            margin-top: 15px;
-        }
-
-        .btn-suscribete:hover { background: #fff; color: #000; }
-
-        /* 4. HISTORIA */
-        .contenedor-historia {
-            flex: 1;
-            max-width: 850px;
+        /* 4. LAYOUT DOS COLUMNAS */
+        .contenedor-principal {
+            max-width: 1100px;
             margin: 50px auto;
+            display: flex;
+            gap: 40px;
             padding: 0 25px;
-            text-align: center;
+            align-items: flex-start;
         }
 
-        .foto-perfil-contenedor { margin-bottom: 35px; }
-        .foto-perfil-contenedor img { max-width: 250px; height: auto; border-radius: 5px; }
+        /* Lateral del Tío (Izquierda) */
+        .promo-tio {
+            flex: 1;
+            background: #000;
+            color: #fff;
+            padding: 20px;
+            border-left: 6px solid #ff0000;
+            position: sticky;
+            top: 100px;
+        }
+        .promo-tio h4 { color: #ff0000; font-size: 0.65rem; text-transform: uppercase; margin-bottom: 8px; }
+        .promo-tio h3 { font-size: 1.1rem; font-weight: 900; margin-bottom: 10px; line-height: 1.2; }
+        .btn-pato { display: block; text-align: center; background: #fff; color: #000; text-decoration: none; padding: 10px; font-weight: 900; font-size: 0.75rem; margin-top: 15px; transition: 0.3s; }
+        .btn-pato:hover { background: #ff0000; color: #fff; }
 
-        .titulo-historia { font-size: 2rem; font-weight: 900; text-transform: uppercase; margin-bottom: 30px; }
-        .texto-largo { font-size: 1.2rem; color: #444; text-align: justify; }
+        /* Columna de tu Historia (Derecha) */
+        .columna-historia { flex: 2; text-align: center; }
+        .foto-perfil img { max-width: 280px; border-radius: 10px; margin-bottom: 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        .titulo-historia { font-size: 2rem; font-weight: 900; margin-bottom: 25px; }
+        .texto-largo { font-size: 1.15rem; color: #333; text-align: justify; }
         .texto-largo p { margin-bottom: 25px; }
 
         /* 5. FOOTER */
-        footer { border-top: 2.5px solid #000; padding: 25px; text-align: center; font-size: 0.95rem; }
-        footer p { margin-bottom: 5px; }
+        footer { border-top: 3px solid #000; padding: 30px; text-align: center; margin-top: 40px; }
 
-        /* RESPONSIVE */
         @media (max-width: 900px) {
+            .contenedor-principal { flex-direction: column-reverse; }
             .banner-canal { flex-direction: column; text-align: center; }
-            .video-contenedor { width: 100%; padding-bottom: 56.25%; }
-            .banner-canal-info { padding: 0; }
+            .promo-tio { position: static; width: 100%; }
         }
     </style>
 </head>
@@ -140,42 +141,59 @@
         <h1>BORJABACK BARRERAS AL LIMITE</h1>
         <nav>
             <ul>
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#">Entrevistas</a></li>
-                <li><a href="#">Videos</a></li>
-                <li><a href="#">Contacto</a></li>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="entrevistas.html">Entrevistas</a></li>
+                <li>
+                    <a href="#">Videos ▼</a>
+                    <ul class="submenu">
+                        <li><a href="videos-largos.html">Largos</a></li>
+                        <li><a href="shorts.html">Shorts</a></li>
+                    </ul>
+                </li>
+                <li><a href="contacto.html">Contacto</a></li>
             </ul>
         </nav>
     </header>
 
     <section class="seccion-impacto">
         <div class="banner-canal">
-            <div class="video-contenedor">
-                <!-- VÍDEO DE VICENTE DEL BOSQUE -->
-                <iframe src="https://www.youtube.com/embed/QRJZDYqhCzE" title="Entrevista Vicente del Bosque" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <div class="video-wrapper">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/QRJZDYqhCzE" title="Vicente del Bosque" frameborder="0" allowfullscreen></iframe>
+                </div>
             </div>
-            <div class="banner-canal-info">
-                <span class="etiqueta-roja">ENTREVISTA ESTRELLA</span>
+            <div class="banner-info">
+                <span class="etiqueta-roja">DESTACADO</span>
                 <h3>CHARLA CON VICENTE DEL BOSQUE</h3>
-                <p>Una conversación única sobre valores, deporte y superación con una leyenda del fútbol mundial.</p>
-                <a href="https://www.youtube.com/channel/UCJHJqxAVIHJ4c-tcf_VDhdA" target="_blank" class="btn-suscribete">SUSCRÍBETE AL CANAL</a>
+                <a href="https://www.youtube.com/channel/UCJHJqxAVIHJ4c-tcf_VDhdA" target="_blank" class="btn-yt">SUSCRÍBETE</a>
             </div>
         </div>
     </section>
 
-    <main class="contenedor-historia">
-        <div class="foto-perfil-contenedor">
-            <img src="fotoborja2.jpg" alt="Borjaback">
-        </div>
+    <div class="contenedor-principal">
+        
+        <aside class="promo-tio">
+            <h4>PROYECTO AMIGO</h4>
+            <h3>LAS AVENTURAS DEL PATO RUTI Y SUS KOMPIS</h3>
+            <p style="font-size: 0.8rem; color: #ccc;">Historias únicas y divertidas.</p>
+            <a href="https://elpatorutiysuskompis.github.io/LAS-AVENTURAS-DEL-PATO-RUTI-Y-SUS-KOMPIS/" target="_blank" class="btn-pato">VISITAR</a>
+        </aside>
 
-        <h2 class="titulo-historia">Mi Historia al Límite</h2>
+        <main class="columna-historia">
+            <div class="foto-perfil">
+                <img src="foto borja.jpg" alt="Borjaback">
+            </div>
+            <h2 class="titulo-historia">Mi Historia al Límite</h2>
+            <div class="texto-largo">
+                <p>Mi camino empezó con un reto desde el minuto cero. Mi nacimiento no fue como el de los demás, y desde ese primer aliento, la vida me puso delante una serie de barreras que, lejos de frenarme, terminaron por definir quién soy hoy. A través de este proyecto, busco convertir cada obstáculo en un trampolín, demostrando que los límites solo existen para quienes no se atreven a desafiarlos.</p>
+                
+                <p>El objetivo de este proyecto es ponerle voz a lo que muchos prefieren ignorar: la realidad de la accesibilidad en nuestras calles y en nuestra sociedad. En mis vídeos, muestro lo que es la accesibilidad real frente a la que nos intentan vender. Quiero que el mundo entienda que no pedimos favores, pedimos derechos, y que una ciudad diseñada para todos es, en realidad, una ciudad mejor para cualquiera.</p>
+                
+                <p>Nada de esto sería posible sin los pilares que me sostienen. Vengo de una familia luchadora; crecer junto a mi hermano me enseñó el verdadero significado de la palabra resistencia. Y en este viaje, no estoy solo. Marta fue esa chispa que terminó de darme el impulso necesario, junto a Dani, Jose y Pablo, mis amigos más fieles que siempre están al pie del cañón, apoyando cada nueva aventura de Barreras al Límite.</p>
+            </div>
+        </main>
 
-        <div class="texto-largo">
-            <p>Mi camino empezó con un reto desde el minuto cero. Mi nacimiento no fue como el de los demás, y desde ese primer aliento, la vida me puso delante una serie de barreras que, lejos de frenarme, terminaron por definir quién soy hoy. Crecí lidiando con un entorno que no siempre estaba preparado para recibirme, pero esa misma lucha fue la que prendió la mecha de lo que hoy conocéis como Borjaback. Decidí abrir este canal no por ego, sino por una necesidad brutal de visibilizar la discapacidad desde la verdad, sin adornos ni lástima.</p>
-            <p>El objetivo de este proyecto es ponerle voz a lo que muchos prefieren ignorar: la realidad de la accesibilidad en nuestras calles y en nuestra sociedad. Estamos hartos de ver lugares que se cuelgan la medalla de "accesibles" por poner una rampa impracticable o un baño que no cumple su función. En mis vídeos, muestro lo que es la accesibilidad real frente a la que nos intentan vender. Quiero que el mundo entienda que no pedimos favores, pedimos derechos. Acompáñame en esta misión de derribar muros, denunciar lo injusto y demostrar que siempre se puede vivir al límite.</p>
-            <p>Nada de esto sería posible sin los pilares que me sostienen. Vengo de una familia luchadora que sabe lo que es pelear contra corriente; crecer junto a mi hermano, con su discapacidad intelectual grave y sus valientes batallas de corazón, me enseñó el verdadero significado de la palabra resistencia. Y en este viaje, no estoy solo. Marta fue esa chispa que terminó de darme el impulso necesario para lanzarme a YouTube cuando solo era una idea en mi cabeza. Junto a ella, Dani, Jose y Pablo han sido los amigos más fieles y sinceros que la vida me ha podido dar. Ellos son el motor que me recuerda por qué empecé y por quién sigo dando guerra.</p>
-        </div>
-    </main>
+    </div>
 
     <footer>
         <p>Pagina Creada por Borja Angosto Nieto</p>
