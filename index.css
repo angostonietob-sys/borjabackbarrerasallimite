@@ -65,3 +65,16 @@
     .seccion-biografia { flex-direction: column-reverse; }
     .promo-tio-lateral { position: static; width: 100%; }
 }
+
+/* Bloque del Short adaptado al lateral izquierdo */
+.short-lateral-sticky {
+    background: #000000;
+    color: #fff;
+    padding: 15px;
+    border-left: 8px solid #ff0000; /* Línea roja a juego */
+    position: sticky;
+    top: 360px; /* Se queda pegado un poco más abajo que el de tu tío */
+    text-align: center;
+    margin-top: 20px;
+    border-radius: 4px; /* Suave curvatura */
+}
