@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ENTREVISTAS - BORJABACK</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; background-color: #ffffff; color: #333; }
+
+        header {
+            background-color: #ffffff;
+            border-top: 2.5px solid #000;
+            border-bottom: 2.5px solid #000;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        header h1 { font-size: 1.1rem; text-transform: uppercase; font-weight: 900; }
+        
+        nav ul { display: flex; list-style: none; gap: 20px; align-items: center; }
+        nav ul li { position: relative; }
+        nav ul li a { text-decoration: none; color: #000; font-weight: 700; font-size: 0.8rem; text-transform: uppercase; transition: color 0.3s; padding: 10px 0; }
+        nav ul li a:hover { color: #ff0000; }
+
+        .submenu { 
+            display: none; 
+            position: absolute; 
+            top: 100%; 
+            left: 0; 
+            background-color: #fff; 
+            border: 2px solid #000; 
+            min-width: 160px; 
+            list-style: none; 
+            z-index: 2000; 
+            box-shadow: 5px 5px 0px #000;
+        }
+        .submenu li a { padding: 12px 15px; display: block; font-size: 0.75rem; border-bottom: 1px solid #eee; text-align: left; }
+        .submenu li:last-child a { border-bottom: none; }
+        nav ul li:hover .submenu { display: block; }
+
+        .contenedor-entrevistas { width: 95%; max-width: 1400px; margin: 40px auto; }
+        .grid-entrevistas { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; margin-bottom: 50px; }
+
+        .tarjeta-entrevista { border: 2.5px solid #000; background: #fff; display: flex; flex-direction: column; transition: 0.3s; }
+        .tarjeta-entrevista:hover { box-shadow: 10px 10px 0px #ff0000; }
+
+        .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; background: #000; border-bottom: 2.5px solid #000; }
+        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+        
+        .info-entrevista { padding: 20px; flex-grow: 1; }
+        .info-entrevista h3 { font-size: 1.2rem; font-weight: 900; text-transform: uppercase; margin-bottom: 12px; }
+        .info-entrevista p { font-size: 0.95rem; color: #444; text-align: justify; line-height: 1.5; }
+
+        footer { border-top: 3.5px solid #000; padding: 40px; text-align: center; margin-top: 60px; font-weight: 700; }
+
+        @media (max-width: 1100px) { .grid-entrevistas { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 750px) { 
+            header { flex-direction: column; padding: 15px 20px; }
+            .grid-entrevistas { grid-template-columns: 1fr; }
+            .submenu { left: 50%; transform: translateX(-50%); }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>BORJABACK BARRERAS AL LIMITE</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li>
+                    <a href="#">Entrevistas ▼</a>
+                    <ul class="submenu">
+                        <li><a href="entrevistas.html">Principales</a></li>
+                        <li><a href="otrasentrevistas.html">Otras</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Videos ▼</a>
+                    <ul class="submenu">
+                        <li><a href="videos-largos.html">Largos</a></li>
+                        <li><a href="shorts.html">Shorts</a></li>
+                    </ul>
+                </li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="contenedor-entrevistas">
+        <div class="grid-entrevistas">
+            
+            <!-- 1. VICENTE DEL BOSQUE -->
+            <article class="tarjeta-entrevista">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/QRJZDYqhCzE" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="info-entrevista">
+                    <h3>VICENTE DEL BOSQUE</h3>
+                    <p>En esta ocasión nos acompaña Vicente del Bosque para hablar con nosotros sobre sus años de jugador y entrenador en el Real Madrid y posteriormente su época como seleccionador nacional, y conoceremos un poco más a su hijo Álvaro para romper con algunos prejuicios sobre el Síndrome de Down.</p>
+                </div>
+            </article>
+
+            <!-- 2. LUIS CARRIÓN -->
+            <article class="tarjeta-entrevista">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/EdUfpoRrcjw" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="info-entrevista">
+                    <h3>LUIS CARRIÓN</h3>
+                    <p>Luis Carrión está al frente del Efesé en uno de los momentos más ilusionantes de la historia del club. Charlamos sobre su vida y su carrera, vivir un descenso, entrenar al FC Cartagena, la Liga Genuine, y mucho más.</p>
+                </div>
+            </article>
+
+            <!-- 3. PABLO PINEDA -->
+            <article class="tarjeta-entrevista">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/2M8DlO0cdDI" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="info-entrevista">
+                    <h3>PABLO PINEDA</h3>
+                    <p>Pablo Pineda la alegría hecha persona, un hombre con grandes valores humanos que nos ha dado a lo largo de su vida una importante lección: da igual las trabas que te encuentres mientras luches, llegarás a donde quieras llegar.</p>
+                </div>
+            </article>
+
+            <!-- 4. JORDI SABATÉ PONS -->
+            <article class="tarjeta-entrevista">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/SZyr8t4zXUA" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="info-entrevista">
+                    <h3>JORDI SABATÉ PONS</h3>
+                    <p>En esta ocasión viene al canal un activista, youtuber y luchador en una causa como es la Esclerosis Lateral Amiotrófica, el gran Jordi Sabaté Pons.</p>
+                </div>
+            </article>
+
+            <!-- 5. LOIDA ZABALA -->
+            <article class="tarjeta-entrevista">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/Lm37bX64jM8" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="info-entrevista">
+                    <h3>LOIDA ZABALA</h3>
+                    <p>Hoy entrevistamos a la gran Loida Zabala, una mujer con una gran personalidad, un gran sacrificio de lucha, y una actitud impecable ante la vida.</p>
+                </div>
+            </article>
+
+            <!-- 6. PEDRO GARCÍA AGUADO -->
+            <article class="tarjeta-entrevista">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/GP6FebYyvW4" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="info-entrevista">
+                    <h3>PEDRO GARCÍA AGUADO</h3>
+                    <p>Pedro García Aguado nos habla sin filtros sobre su historia de recuperación, la presión del éxito desde joven y su visión sobre la educación, los límites y la familia.</p>
+                </div>
+            </article>
+
+        </div>
+    </main>
+<!-- BOTÓN PARA IR A LA SEGUNDA PÁGINA (OTRAS ENTREVISTAS) -->
+        <div style="text-align: center; margin-top: 50px; margin-bottom: 20px; width: 100%;">
+            <a href="otrasentrevistas.html" style="
+                display: inline-block;
+                padding: 15px 40px;
+                background-color: #000;
+                color: #fff !important;
+                text-decoration: none !important;
+                font-weight: 800;
+                text-transform: uppercase;
+                border: 2px solid #000;
+                letter-spacing: 1px;
+                transition: all 0.2s ease;
+            "
+            onmouseover="this.style.backgroundColor='#FF0000'; this.style.borderColor='#FF0000';"
+            onmouseout="this.style.backgroundColor='#000'; this.style.borderColor='#000';">
+                VER MÁS ENTREVISTAS ➔
+            </a>
+        </div>
+    <footer>
+        <p>Pagina Creada por Borja Angosto Nieto</p>
+        <p>Todos los derechos reservados © 2026</p>
+    </footer>
+
+</body>
+</html>

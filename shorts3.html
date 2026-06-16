@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Borjaback Barreras al Límite - Shorts Página 3</title>
+  <style>
+    /* =======================================================
+       1. ESTILOS DEL MENÚ SUPERIOR (HEADER)
+       ======================================================= */
+    header { 
+      background-color: #ffffff; 
+      border-top: 2.5px solid #000000; 
+      border-bottom: 2.5px solid #000000; 
+      padding: 15px 40px; 
+      display: flex; 
+      justify-content: space-between; 
+      align-items: center; 
+      position: sticky; 
+      top: 0; 
+      z-index: 1000; 
+    }
+    
+    header h1 { 
+      font-size: 1.2rem; 
+      text-transform: uppercase; 
+      font-weight: 900; 
+      margin: 0;
+      color: #000000; 
+      font-family: Arial, sans-serif;
+    }
+    
+    nav ul { 
+      display: flex; 
+      list-style: none; 
+      gap: 20px; 
+      align-items: center; 
+      margin: 0;
+      padding: 0;
+    }
+    
+    nav ul li { 
+      position: relative; 
+    }
+    
+    nav ul li a { 
+      text-decoration: none; 
+      color: #000000; 
+      font-weight: 900; 
+      font-size: 0.8rem; 
+      text-transform: uppercase; 
+      transition: color 0.3s; 
+      font-family: Arial, sans-serif;
+    }
+    
+    nav ul li a:hover { 
+      color: #ff0000; 
+    }
+
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      background-color: #ffffff; 
+      border: 1px solid #000000; 
+      padding: 5px 0; 
+      list-style: none;
+      top: 100%;
+      left: 0;
+      z-index: 1010;
+      min-width: 150px;
+      margin: 5px 0 0 0;
+    }
+
+    .dropdown-menu li {
+      display: block;
+      margin: 0;
+    }
+
+    .dropdown-menu li a {
+      display: block;
+      color: #000000; 
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 10px 20px; 
+      text-decoration: none;
+      transition: background-color 0.15s, color 0.15s;
+    }
+
+    .dropdown-menu li a:hover {
+      background-color: #000000; 
+      color: #ffffff; 
+    }
+
+    .dropdown:hover .dropdown-menu {
+      display: block;
+    }
+
+    /* =======================================================
+       2. REJILLA DE SHORTS (PÁGINA 3)
+       ======================================================= */
+    .shorts-section {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+      font-family: Arial, sans-serif;
+    }
+
+    .shorts-section h2 {
+      font-size: 1.5rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 5px;
+      color: #000;
+      margin-top: 20px;
+    }
+
+    .shorts-subtitle {
+      font-size: 0.9rem;
+      color: #333;
+      margin-bottom: 30px;
+    }
+
+    .shorts-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-bottom: 50px;
+    }
+
+    .short-card {
+      background: #fff;
+      border: 1px solid #000;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .video-box {
+      width: 100%;
+      border-bottom: 1px solid #000;
+      background: #000;
+    }
+
+    .video-box iframe {
+      width: 100%;
+      display: block;
+    }
+
+    .short-info {
+      padding: 20px;
+      text-align: left;
+    }
+
+    .short-info h3 {
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      margin: 0;
+      color: #000;
+      font-weight: bold;
+      line-height: 1.4;
+    }
+
+    /* =======================================================
+       3. PAGINACIÓN CENTRADA DE RAÍZ (PÁGINA 3 ACTIVA)
+       ======================================================= */
+    .pagination-container {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 60px 0 20px 0;
+      clear: both;
+    }
+
+    .pagination {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .page-btn {
+      display: inline-block;
+      text-decoration: none;
+      color: #000000;
+      background-color: #ffffff;
+      border: 2px solid #000000;
+      padding: 8px 16px;
+      font-weight: bold;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      transition: background-color 0.15s, color 0.15s;
+    }
+
+    .page-btn:hover {
+      background-color: #000000;
+      color: #ffffff;
+    }
+
+    .page-btn.active {
+      background-color: #000000;
+      color: #ffffff;
+      cursor: default;
+    }
+
+    @media (max-width: 768px) {
+      .shorts-grid {
+        grid-template-columns: 1fr;
+      }
+      header {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+      }
+      nav ul {
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <h1>BORJABACK BARRERAS AL LIMITE</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="entrevistas.html">Entrevistas</a></li>
+        <li class="dropdown">
+          <a href="#">Videos 🔻</a>
+          <ul class="dropdown-menu">
+            <li><a href="videos-largos.html">VIDEOS LARGOS</a></li>
+            <li><a href="shorts.html">SHORTS</a></li>
+          </ul>
+        </li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- SECCIÓN SHORTS -->
+  <section class="shorts-section">
+    <h2>LOS MEJORES SHORTS EL FINAL</h2>
+    <p class="shorts-subtitle">Sigue disfrutando de más contenido rápido.</p>
+
+    <div class="shorts-grid">
+      
+      <!-- SHORT 13 (REAL) -->
+      <div class="short-card">
+        <div class="video-box">
+          <iframe height="315" src="https://www.youtube.com/embed/LCYpUgqNeo4" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="short-info">
+          <h3>AGACHÁNDOME CON LA BOLSITA Y LA FRASE QUE NO ESPERABA</h3>
+        </div>
+      </div>
+
+    <!-- SHORT 14 -->
+      <div class="short-card">
+        <div class="video-box">
+          <iframe height="315" src="https://www.youtube.com/embed/4agiLsqxZ4c" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="short-info">
+          <h3>QUE SERA DE MI HIJO EL DÍA QUE YO NO ESTE?</h3>
+        </div>
+      </div>
+
+     <!-- SHORT 15 -->
+      <div class="short-card">
+        <div class="video-box">
+          <iframe height="315" src="https://www.youtube.com/embed/EB07HSGPkUk" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="short-info">
+          <h3>ME PESO DESPUES DE VERANO Y ESTO PASO</h3>
+        </div>
+      </div>
+
+     <!-- SHORT 16 -->
+      <div class="short-card">
+        <div class="video-box">
+          <iframe height="315" src="https://www.youtube.com/embed/dNIJ8B1SQdc" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="short-info">
+          <h3>LO QUE TE PUEDE COSTAR IR DE LISTO 1500€ DE MULTA</h3>
+        </div>
+      </div>
+
+     <!-- SHORT 17 -->
+      <div class="short-card">
+        <div class="video-box">
+          <iframe height="315" src="https://www.youtube.com/embed/mIkFYaHRIpI" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="short-info">
+          <h3>AUTISMO Y TARJETA DE APARCAMIENTO DE MOVILIDAD REDUCIDA</h3>
+        </div>
+      </div>
+
+      <!-- SHORT 18 -->
+      <div class="short-card">
+        <div class="video-box">
+          <iframe height="315" src="https://www.youtube.com/embed/ghwsv8qAOe8" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="short-info">
+          <h3>COMO JUBILARTE ANTES Y COBRAR EL 100%</h3>
+        </div>
+      </div>
+
+    </section>
+
+  <!-- PAGINACIÓN FUERA DE LA SECCIÓN PARA EVITAR EMPUJONES -->
+  <div style="width: 100% !important; clear: both !important; display: block !important; text-align: center !important; margin: 50px 0 !important;">
+    <div style="display: inline-flex !important; justify-content: center !important; align-items: center !important; gap: 10px !important;">
+      
+      <a href="shorts2.html" style="display: inline-block !important; text-decoration: none !important; color: #000000 !important; background-color: #ffffff !important; border: 2px solid #000000 !important; padding: 8px 16px !important; font-weight: bold !important; font-size: 0.85rem !important; text-transform: uppercase !important; font-family: Arial, sans-serif !important;">← Anterior</a>
+      
+      <a href="shorts.html" style="display: inline-block !important; text-decoration: none !important; color: #000000 !important; background-color: #ffffff !important; border: 2px solid #000000 !important; padding: 8px 16px !important; font-weight: bold !important; font-size: 0.85rem !important; text-transform: uppercase !important; font-family: Arial, sans-serif !important;">1</a>
+      
+      <a href="shorts2.html" style="display: inline-block !important; text-decoration: none !important; color: #000000 !important; background-color: #ffffff !important; border: 2px solid #000000 !important; padding: 8px 16px !important; font-weight: bold !important; font-size: 0.85rem !important; text-transform: uppercase !important; font-family: Arial, sans-serif !important;">2</a>
+      
+      <a href="shorts3.html" style="display: inline-block !important; text-decoration: none !important; color: #ffffff !important; background-color: #000000 !important; border: 2px solid #000000 !important; padding: 8px 16px !important; font-weight: bold !important; font-size: 0.85rem !important; text-transform: uppercase !important; font-family: Arial, sans-serif !important;">3</a>
+      
+      <a href="#" style="display: inline-block !important; text-decoration: none !important; color: #000000 !important; background-color: #ffffff !important; border: 2px solid #000000 !important; padding: 8px 16px !important; font-weight: bold !important; font-size: 0.85rem !important; text-transform: uppercase !important; opacity: 0.3 !important; pointer-events: none !important; font-family: Arial, sans-serif !important;">Siguiente →</a>
+      
+    </div>
+  </div>
+
+</body>
+<!-- FOOTER FORZADO AL MEDIO EXACTO -->
+  <div style="width: 100% !important; clear: both !important; display: block !important; text-align: center !important; margin: 40px auto 20px auto !important; float: none !important;">
+    <hr style="border: none !important; border-top: 1px solid #e0e0e0 !important; width: 80% !important; margin: 0 auto 30px auto !important; clear: both !important; float: none !important;">
+    <div style="display: block !important; width: 100% !important; text-align: center !important; clear: both !important; float: none !important; margin: 0 auto !important; padding: 15px 0 !important;">
+      <p style="font-family: Arial, sans-serif !important; font-size: 0.85rem !important; color: #000000 !important; font-weight: bold !important; text-transform: uppercase !important; letter-spacing: 0.5px !important; margin: 0 !important; display: inline-block !important;">
+        © 2026 BORJABACK BARRERAS AL LÍMITE - TODOS LOS DERECHOS RESERVADOS
+      </p>
+    </div>
+  </div>
+</body>
+</html>

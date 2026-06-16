@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VÍDEOS LARGOS (PÁG. 3) - BORJABACK</title>
+    <style>
+        /* 1. RESET Y FUENTE */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Arial, sans-serif !important;
+        }
+
+        body {
+            background-color: #fff;
+            color: #000;
+        }
+
+        /* 2. HEADER */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            border-bottom: 2px solid #000;
+            background-color: #fff;
+        }
+
+        .logo {
+            font-weight: 800;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            color: #000;
+            text-decoration: none;
+        }
+
+        nav {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+        }
+
+        .nav-link {
+            text-decoration: none !important;
+            color: #000 !important;
+            font-weight: 700 !important;
+            font-size: 14px;
+            text-transform: uppercase;
+            transition: color 0.2s ease;
+            cursor: pointer;
+        }
+
+        .nav-link:hover {
+            color: #FF0000 !important;
+        }
+
+        /* MENÚ DESPLEGABLE */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #fff;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+            border: 2px solid #000;
+            z-index: 1000;
+            top: 100%;
+            left: 0;
+            list-style: none;
+            padding: 0;
+        }
+
+        .dropdown-content li a {
+            color: #000 !important;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            font-weight: 700;
+            font-size: 13px;
+            text-transform: uppercase;
+            transition: background-color 0.2s ease, color 0.2s ease;
+        }
+
+        .dropdown-content li a:hover {
+            background-color: #000;
+            color: #fff !important;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* 3. REJILLA 4X4 (4 COLUMNAS) */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .video-card {
+            border: 2px solid #000;
+            background-color: #fff;
+            transition: all 0.2s ease;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .video-card:hover {
+            box-shadow: 8px 8px 0px #FF0000;
+            transform: translate(-4px, -4px);
+        }
+
+        .video-frame {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            background: #000;
+        }
+
+        .video-frame iframe {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+        }
+
+        .video-info {
+            padding: 15px;
+            border-top: 2px solid #000;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .video-info h3 {
+            font-weight: 800;
+            font-size: 15px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .video-info p {
+            font-size: 13px;
+            line-height: 1.4;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 1100px) {
+            .video-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 650px) {
+            .video-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo">BORJABACK BARRERAS AL LÍMITE</a>
+        <nav>
+            <a href="index.html" class="nav-link">INICIO</a>
+            <a href="entrevistas.html" class="nav-link">ENTREVISTAS</a>
+            
+            <div class="dropdown">
+                <span class="nav-link">VIDEOS ▾</span>
+                <ul class="dropdown-content">
+                    <li><a href="videoslargos.html">Videos Largos</a></li>
+                    <li><a href="shorts.html">Shorts</a></li>
+                </ul>
+            </div>
+
+            <a href="contacto.html" class="nav-link">CONTACTO</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="video-grid">
+            
+            <!-- FILA 1 - VÍDEO 17 -->
+            <div class="video-card">
+                <div class="video-frame">
+                    <!-- Enlace embed correcto para tu decimoséptimo vídeo -->
+                    <iframe src="https://www.youtube.com/embed/uJj1k9nRLxw" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h3>STORYTIME: EL DÍA QUE PENSÉ QUE ERA GAFE</h3>
+                    <p>Una divertida y sincera anécdota personal contada a cámara. Nos abrimos para compartir esos momentos en los que parece que todo se alinea en tu contra.</p>
+                </div>
+            </div>
+          <!-- FILA 1 - VÍDEO 18 -->
+            <div class="video-card">
+                <div class="video-frame">
+                    <!-- Enlace embed correcto para tu decimoquinto vídeo -->
+                    <iframe src="https://www.youtube.com/embed/m_N40TirQiQ" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h3>4 VENTAJAS DE SALIR CON UN PARALÍTICO</h3>
+                    <p>Un toque de humor y realidad en el canal. Desglosamos entre risas varias ventajas cotidianas de salir con una persona con movilidad reducida. ¡No te lo pierdas!</p>
+                </div>
+            </div>
+
+            <!-- FILA 1 - VÍDEO 19 -->
+            <div class="video-card">
+                <div class="video-frame">
+                    <!-- Enlace embed correcto para tu decimonoveno vídeo -->
+                    <iframe src="https://www.youtube.com/embed/s5Vbv4WhKu8" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h3>DENUNCIA: CINE "PREMIUM" DE 500.000€ NO ACCESIBLE</h3>
+                    <p>Muestro mi indignación ante una sala de cine totalmente nueva que ha costado medio millón de euros y se han olvidado por completo de la accesibilidad. ¡Inadmisible!</p>
+                </div>
+            </div>
+
+            <!-- FILA 1 - VÍDEO 20 -->
+            <div class="video-card">
+                <div class="video-frame">
+                    <!-- Enlace embed correcto para tu vigésimo vídeo -->
+                    <iframe src="https://www.youtube.com/embed/NA_Igb-WIis" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h3>REACCIÓN: EL SÚPER PODER VISUAL DEL AUTISMO</h3>
+                    <p>Reacciono al increíble talento de un hombre con autismo capaz de memorizar Roma en media hora desde un helicóptero y dibujarla entera de forma perfecta.</p>
+                </div>
+            </div>
+           <!-- FILA 1 - VÍDEO 21 -->
+            <div class="video-card">
+                <div class="video-frame">
+                    <!-- Enlace embed correcto para tu vigésimo primer vídeo -->
+                    <iframe src="https://www.youtube.com/embed/9duh51314uQ" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h3>¡VOLVIÓ A CAMINAR! TRATAMIENTO EXPERIMENTAL QUE DA ESPERANZA A LA ELA</h3>
+                    <p>Analizo el esperanzador caso de un tratamiento experimental contra la ELA juvenil. Un contenido informativo que recuerda que cada paciente es un mundo, mientras seguimos pidiendo la necesaria Ley ELA.</p>
+                </div>
+            </div>
+
+            <!-- FILA 1 - VÍDEO 22 -->
+            <div class="video-card">
+                <div class="video-frame">
+                    <!-- Enlace embed correcto para tu vigésimo segundo vídeo -->
+                    <iframe src="https://www.youtube.com/embed/5p6XIDbPswU" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h3>¿SE PUEDE VOLAR EN AVION LLEVANDO VALVULA? OS RESPONDO</h3>
+                    <p>Respondo a una de las preguntas más repetidas: ¿es seguro volar en avión con una válvula de hidrocefalia? Te explico por qué no te impide llevar una vida normal ni viajar.</p>
+                </div>
+            </div>
+            <!-- FILA 1 - VÍDEO 23 -->
+            <div class="video-card">
+                <div class="video-frame">
+                    <!-- Enlace embed correcto para tu vigésimo tercer vídeo -->
+                    <iframe src="https://www.youtube.com/embed/pWqemlm6nNU" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h3>¿POR QUÉ SIGUE PASANDO ESTO? #discapacidad</h3>
+                    <p>Denuncio públicamente el vergonzoso caso de una familia expulsada de un centro comercial por acudir con su hijo con autismo y su perro de asistencia, analizando la ley que ampara este derecho fundamental.</p>
+                </div>
+            </div>
+
+            <!-- FILA 1 - VÍDEO 24 -->
+            <div class="video-card">
+                <div class="video-frame">
+                    <!-- Enlace embed correcto para tu vigésimo cuarto vídeo -->
+                    <iframe src="https://www.youtube.com/embed/3-eBi2E_QZw" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h3>VIVIENDO EN LA CALLE EN SILLA DE RUEDAS #discapacidad DIA 12 DE 60</h3>
+                    <p>Denuncio con total indignación la vergonzosa situación de un hombre con un 88% de discapacidad en Canarias que, desamparado por la burocracia, malvive en la calle y sufre agresiones inhumanas cotidianas.</p>
+                </div>
+            </div>
+
+        </div> 
+    </main> 
+    
+    <footer>
+        <p style="text-align: center; padding: 20px; border-top: 2px solid #000; font-weight: 700; font-size: 12px;">© 2026 BORJABACK BARRERAS AL LÍMITE - TODOS LOS DERECHOS RESERVADOS</p>
+    </footer>
+
+</body>
+</html>

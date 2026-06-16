@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BORJABACK - BARRERAS AL LIMITE</title>
+    <style>
+        /* BASE */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; background-color: #ffffff; color: #333; line-height: 1.6; }
+
+        /* HEADER: Título izquierda, Menú derecha */
+        header {
+            background-color: #ffffff;
+            border-top: 2.5px solid #000;
+            border-bottom: 2.5px solid #000;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        header h1 { font-size: 1.2rem; text-transform: uppercase; font-weight: 900; }
+        nav ul { display: flex; list-style: none; gap: 20px; align-items: center; }
+        nav ul li { position: relative; }
+        nav ul li a {
+            text-decoration: none;
+            color: #000;
+            font-weight: 700;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            transition: color 0.3s;
+        }
+        nav ul li a:hover { color: #ff0000; }
+
+        /* SUBMENÚ */
+        .submenu { display: none; position: absolute; top: 100%; left: 0; background-color: #fff; border: 2px solid #000; min-width: 140px; list-style: none; z-index: 1001; }
+        .submenu li a { padding: 10px 15px; font-size: 0.75rem; border-bottom: 1px solid #eee; display: block; }
+        nav ul li:hover .submenu { display: block; }
+
+        /* BANNER VICENTE DEL BOSQUE */
+        .seccion-impacto { width: 100%; background-color: #000; padding: 25px 0; border-bottom: 4px solid #ff0000; }
+        .banner-canal { max-width: 900px; margin: 0 auto; display: flex; align-items: center; padding: 0 20px; gap: 25px; }
+        .video-wrapper { flex: 1; box-shadow: 0 8px 20px rgba(0,0,0,0.5); }
+        .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; }
+        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+        .banner-info { flex: 1; color: #fff; text-align: center; }
+        .etiqueta-roja { background: #ff0000; color: #fff; padding: 4px 10px; font-size: 0.65rem; font-weight: 900; margin-bottom: 8px; display: inline-block; }
+        .banner-info h3 { font-size: 1.3rem; font-weight: 900; margin-bottom: 12px; }
+        .btn-yt { display: inline-block; border: 2px solid #fff; color: #fff; text-decoration: none; padding: 10px 25px; font-weight: 900; font-size: 0.9rem; text-transform: uppercase; transition: 0.3s; }
+        .btn-yt:hover { background: #fff; color: #000; }
+
+        /* CONTENIDO PRINCIPAL */
+        .contenedor-principal { max-width: 1100px; margin: 50px auto; display: flex; gap: 40px; padding: 0 25px; align-items: flex-start; }
+        .promo-tio { flex: 1; background: #000; color: #fff; padding: 20px; border-left: 6px solid #ff0000; position: sticky; top: 100px; }
+        .promo-tio h3 { font-size: 1.1rem; font-weight: 900; margin-bottom: 10px; }
+        .btn-pato { display: block; text-align: center; background: #fff; color: #000; text-decoration: none; padding: 10px; font-weight: 900; font-size: 0.75rem; margin-top: 15px; }
+
+        .columna-historia { flex: 2; text-align: center; }
+        .foto-perfil img { max-width: 280px; border-radius: 10px; margin-bottom: 30px; }
+        .titulo-historia { font-size: 2rem; font-weight: 900; margin-bottom: 25px; }
+        .texto-largo { font-size: 1.15rem; color: #333; text-align: justify; }
+        .texto-largo p { margin-bottom: 25px; }
+
+        footer { border-top: 3px solid #000; padding: 30px; text-align: center; margin-top: 40px; }
+
+        @media (max-width: 900px) {
+            header { flex-direction: column; padding: 15px 20px; }
+            nav ul { flex-wrap: wrap; justify-content: center; margin-top: 10px; }
+            .contenedor-principal { flex-direction: column-reverse; }
+            .banner-canal { flex-direction: column; }
+            .promo-tio { position: static; width: 100%; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>BORJABACK BARRERAS AL LIMITE</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="entrevistas.html">Entrevistas</a></li>
+                <li><a href="#">Videos ▼</a>
+                    <ul class="submenu">
+                        <li><a href="videos-largos.html">Largos</a></li>
+                        <li><a href="shorts.html">Shorts</a></li>
+                    </ul>
+                </li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="seccion-impacto">
+        <div class="banner-canal">
+            <div class="video-wrapper">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/QRJZDYqhCzE" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="banner-info">
+                <span class="etiqueta-roja">DESTACADO</span>
+                <h3>CHARLA CON VICENTE DEL BOSQUE</h3>
+                <a href="https://www.youtube.com/channel/UCJHJqxAVIHJ4c-tcf_VDhdA" target="_blank" class="btn-yt">SUSCRÍBETE</a>
+            </div>
+        </div>
+    </section>
+
+    <div class="contenedor-principal">
+        <aside class="promo-tio">
+            <h4 style="color: #ff0000; font-size: 0.6rem; text-transform: uppercase; margin-bottom: 5px;">PROYECTO AMIGO</h4>
+            <h3>LAS AVENTURAS DEL PATO RUTI Y SUS KOMPIS</h3>
+            <p style="font-size: 0.8rem; color: #ccc;">Historias únicas y divertidas.</p>
+            <a href="https://elpatorutiysuskompis.github.io/LAS-AVENTURAS-DEL-PATO-RUTI-Y-SUS-KOMPIS/" target="_blank" class="btn-pato">VISITAR</a>
+        </aside>
+
+        <main class="columna-historia">
+            <div class="foto-perfil"><img src="fotoborja2.jpg" alt="Borjaback"></div>
+            <h2 class="titulo-historia">Mi Historia al Límite</h2>
+            <div class="texto-largo">
+                <p>Mi camino empezó con un reto desde el minuto cero. Mi nacimiento no fue como el de los demás, y desde ese primer aliento, la vida me puso delante una serie de barreras que, lejos de frenarme, terminaron por definir quién soy hoy. A través de este proyecto, busco convertir cada obstáculo en un trampolín, demostrando que los límites solo existen para quienes no se atreven a desafiarlos.</p>
+                
+                <p>El objetivo de este proyecto es ponerle voz a lo que muchos prefieren ignorar: la realidad de la accesibilidad en nuestras calles y en nuestra sociedad. En mis vídeos, muestro lo que es la accesibilidad real frente a la que nos intentan vender. Quiero que el mundo entienda que no pedimos favores, pedimos derechos, y que una ciudad diseñada para todos es, en realidad, una ciudad mejor para cualquiera.</p>
+                
+                <p>Nada de esto sería posible sin los pilares que me sostienen. Vengo de una familia luchadora; crecer junto a mi hermano me enseñó el verdadero significado de la palabra resistencia. Y en este viaje, no estoy solo. Marta fue esa chispa que terminó de darme el impulso necesario, junto a Dani, Jose y Pablo, mis amigos más fieles que siempre están al pie del cañón, apoyando cada nueva aventura de Barreras al Límite.</p>
+            </div>
+        </main>
+    </div>
+    <footer>
+        <p>Pagina Creada por Borja Angosto Nieto</p>
+        <p>Todos los derechos reservados © 2026</p>
+    </footer>
+</html>

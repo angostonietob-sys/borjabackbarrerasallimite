@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTRAS ENTREVISTAS - BORJABACK</title>
+    <style>
+        /* 1. RESET Y FUENTE */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Arial, sans-serif !important;
+        }
+
+        body {
+            background-color: #fff;
+            color: #000;
+        }
+
+        /* 2. HEADER */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            border-bottom: 2px solid #000;
+            background-color: #fff;
+        }
+
+        .logo {
+            font-weight: 800;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            color: #000;
+            text-decoration: none;
+        }
+
+        nav {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+        }
+
+        .nav-link {
+            text-decoration: none !important;
+            color: #000 !important;
+            font-weight: 700 !important;
+            font-size: 14px;
+            text-transform: uppercase;
+            transition: color 0.2s ease;
+            cursor: pointer;
+        }
+
+        .nav-link:hover {
+            color: #FF0000 !important;
+        }
+
+        /* CONFIGURACIÓN DEL MENÚ DESPLEGABLE (DROPDOWN) */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #fff;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+            border: 2px solid #000;
+            z-index: 1000;
+            top: 100%;
+            left: 0;
+            list-style: none;
+            padding: 0;
+        }
+
+        .dropdown-content li a {
+            color: #000 !important;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            font-weight: 700;
+            font-size: 13px;
+            text-transform: uppercase;
+            transition: background-color 0.2s ease, color 0.2s ease;
+        }
+
+        .dropdown-content li a:hover {
+            background-color: #000;
+            color: #fff !important;
+        }
+
+        /* Mostrar el menú al pasar el ratón */
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* 3. REJILLA 3x3 */
+        .container {
+            max-width: 1250px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .video-card {
+            border: 2px solid #000;
+            background-color: #fff;
+            transition: all 0.2s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* EFECTO ROJO HOVER */
+        .video-card:hover {
+            box-shadow: 10px 10px 0px #FF0000;
+            transform: translate(-5px, -5px);
+        }
+
+        .video-frame {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            background: #000;
+        }
+
+        .video-frame iframe {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+        }
+
+        .video-info {
+            padding: 20px;
+            border-top: 2px solid #000;
+        }
+
+        .video-info h3 {
+            font-weight: 800;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .video-info p {
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        /* 4. FOOTER CENTRADO Y NEGRITA */
+        footer {
+            width: 100%;
+            padding: 50px 0;
+            border-top: 2px solid #000;
+            margin-top: 60px;
+            background-color: #fff;
+            text-align: center; /* CENTRADO GARANTIZADO */
+            clear: both;
+        }
+
+        footer p {
+            font-weight: 900 !important; /* NEGRITA MÁXIMA */
+            text-transform: uppercase;
+            font-size: 0.95rem;
+            letter-spacing: 1px;
+            color: #000;
+        }
+
+        @media (max-width: 900px) {
+            .video-grid { grid-template-columns: 1fr; }
+            nav { gap: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo">BORJABACK BARRERAS AL LÍMITE</a>
+        <nav>
+            <a href="index.html" class="nav-link">INICIO</a>
+            <a href="entrevistas.html" class="nav-link">ENTREVISTAS</a>
+            
+            <div class="dropdown">
+                <span class="nav-link">VIDEOS ▾</span>
+                <ul class="dropdown-content">
+                    <li><a href="videos-largos.html">Videos Largos</a></li>
+                    <li><a href="shorts.html">Shorts</a></li>
+                </ul>
+            </div>
+
+            <a href="contacto.html" class="nav-link">CONTACTO</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="video-grid">
+            
+            <div class="video-card">
+                <div class="video-frame">
+                    <iframe src="https://www.youtube.com/embed/3FjZ3fUzOm0" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h3>LAURA ROMÁN</h3>
+                    <p>Hay conversaciones que parecen normales… hasta que dejan de serlo. A mitad de esta entrevista, Laura Román cuenta algo que no había hecho público.</p>
+                </div>
+            </div>
+
+            <div class="video-card">
+                <div class="video-frame">
+                    <iframe src="https://www.youtube.com/embed/5WfnQUCZgLU" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h3>PABLO RODRÍGUEZ LAGO</h3>
+                    <p>Charla con el autor de Volviendo a Neverland sobre las acusaciones contra Michael Jackson.</p>
+                </div>
+            </div>
+
+            <div class="video-card">
+                <div class="video-frame">
+                    <iframe src="https://www.youtube.com/embed/TfqhT9lWQ4g" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h3>TOMÁS RONCERO</h3>
+                    <p>Entrevista con Tomas Roncero, un gran tío en lo personal y profesional.</p>
+                </div>
+            </div>
+
+            <div class="video-card">
+                <div class="video-frame">
+                    <iframe src="https://www.youtube.com/embed/fVPQn7nifGw" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h3>DRA. ELISA DOLADO</h3>
+                    <p>Charla sobre regeneración medular y el uso de grafeno en neurociencia.</p>
+                </div>
+            </div>
+
+            <div class="video-card">
+                <div class="video-frame">
+                    <iframe src="https://www.youtube.com/embed/TcxTyya3lBY" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h3>JHONATAN ARMENGOL</h3>
+                    <p>Entrevista al único crítico gastronómico ciego de España. Una lección de superación.</p>
+                </div>
+            </div>
+
+            <div class="video-card">
+                <div class="video-frame">
+                    <iframe src="https://www.youtube.com/embed/4p98Oaoctbc" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h3>ALEJANDRO MORO CAÑAS</h3>
+                    <p>Hablamos con el tenista ATP sobre sus inicios y el dopaje en el tenis profesional.</p>
+                </div>
+            </div>
+
+        </div> 
+    </main> 
+    </div> 
+        
+        <!-- ENLACE CORRECTO A LA SEGUNDA PÁGINA -->
+        <div style="text-align: center; margin-top: 50px; margin-bottom: 20px; width: 100%;">
+            <a href="otrasentrevistas2.html" style="
+                display: inline-block;
+                padding: 15px 40px;
+                background-color: #000;
+                color: #fff !important;
+                text-decoration: none !important;
+                font-weight: 800;
+                text-transform: uppercase;
+                border: 2px solid #000;
+                letter-spacing: 1px;
+                transition: all 0.2s ease;
+            "
+            onmouseover="this.style.backgroundColor='#FF0000'; this.style.borderColor='#FF0000';"
+            onmouseout="this.style.backgroundColor='#000'; this.style.borderColor='#000';">
+                VER MÁS ENTREVISTAS ➔
+            </a>
+        </div>
+    </main> 
+    
+    <footer>
+        <p>© 2026 BORJABACK BARRERAS AL LÍMITE - TODOS LOS DERECHOS RESERVADOS</p>
+    </footer>
+    
+
+</body>
+</html>

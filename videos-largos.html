@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VÍDEOS LARGOS - BORJABACK</title>
+    <style>
+        /* 1. RESET Y FUENTE */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Arial, sans-serif !important;
+        }
+
+        body {
+            background-color: #fff;
+            color: #000;
+        }
+
+        /* 2. HEADER */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            border-bottom: 2px solid #000;
+            background-color: #fff;
+        }
+
+        .logo {
+            font-weight: 800;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            color: #000;
+            text-decoration: none;
+        }
+
+        nav {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+        }
+
+        .nav-link {
+            text-decoration: none !important;
+            color: #000 !important;
+            font-weight: 700 !important;
+            font-size: 14px;
+            text-transform: uppercase;
+            transition: color 0.2s ease;
+            cursor: pointer;
+        }
+
+        .nav-link:hover {
+            color: #FF0000 !important;
+        }
+
+        /* MENÚ DESPLEGABLE */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #fff;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+            border: 2px solid #000;
+            z-index: 1000;
+            top: 100%;
+            left: 0;
+            list-style: none;
+            padding: 0;
+        }
+
+        .dropdown-content li a {
+            color: #000 !important;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            font-weight: 700;
+            font-size: 13px;
+            text-transform: uppercase;
+            transition: background-color 0.2s ease, color 0.2s ease;
+        }
+
+        .dropdown-content li a:hover {
+            background-color: #000;
+            color: #fff !important;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* 3. REJILLA REVOLUCIONARIA 4X4 (4 COLUMNAS) */
+        .container {
+            max-width: 1400px; /* Ampliamos un poco el ancho máximo para que luzcan los 4 vídeos */
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* ¡Aquí está la magia! 4 columnas exactas */
+            gap: 20px; /* Un pelín más estrecho el hueco para que encajen perfectos */
+        }
+
+        .video-card {
+            border: 2px solid #000;
+            background-color: #fff;
+            transition: all 0.2s ease;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .video-card:hover {
+            box-shadow: 8px 8px 0px #FF0000;
+            transform: translate(-4px, -4px);
+        }
+
+        .video-frame {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            background: #000;
+        }
+
+        .video-frame iframe {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+        }
+
+        .video-info {
+            padding: 15px;
+            border-top: 2px solid #000;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .video-info h3 {
+            font-weight: 800;
+            font-size: 15px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .video-info p {
+            font-size: 13px;
+            line-height: 1.4;
+        }
+
+        /* BOTÓN SIGUIENTE */
+        .btn-more {
+            display: inline-block;
+            padding: 15px 40px;
+            background-color: #000;
+            color: #fff !important;
+            text-decoration: none !important;
+            font-weight: 800;
+            text-transform: uppercase;
+            border: 2px solid #000;
+            letter-spacing: 1px;
+            transition: all 0.2s ease;
+        }
+
+        .btn-more:hover {
+            background-color: #FF0000;
+            border-color: #FF0000;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 1100px) {
+            .video-grid { grid-template-columns: repeat(2, 1fr); } /* En pantallas medianas se ponen de 2 en 2 */
+        }
+        @media (max-width: 650px) {
+            .video-grid { grid-template-columns: 1fr; } /* En móvil de 1 en 1 */
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo">BORJABACK BARRERAS AL LÍMITE</a>
+        <nav>
+            <a href="index.html" class="nav-link">INICIO</a>
+            <a href="entrevistas.html" class="nav-link">ENTREVISTAS</a>
+            
+            <div class="dropdown">
+                <span class="nav-link">VIDEOS ▾</span>
+                <ul class="dropdown-content">
+                    <li><a href="videos-largos.html">Videos Largos</a></li>
+                    <li><a href="shorts.html">Shorts</a></li>
+                </ul>
+            </div>
+
+            <a href="contacto.html" class="nav-link">CONTACTO</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="video-grid">
+            
+            <!-- FILA 1 - VÍDEO 1 -->
+            <div class="video-card">
+                <div class="video-frame">
+                    <!-- Enlace embed correcto para tu vídeo -->
+                    <iframe src="https://www.youtube.com/embed/3i3v9kE-v_M" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h3>LA ASISTENCIA SEXUAL</h3>
+                    <p>Hablamos sin tapujos sobre la asistencia sexual en la discapacidad. Un derecho, una necesidad y un tema clave para romper barreras.</p>
+                </div>
+            </div>
+
+            <!-- FILA 1 - VÍDEO 2 -->
+            <div class="video-card">
+                <div class="video-frame">
+                    <!-- Enlace embed correcto para tu segundo vídeo -->
+                    <iframe src="https://www.youtube.com/embed/g-Lom7dHnRU" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h3>MI MAYOR FOBIA: LA LIGIROFOBIA</h3>
+                    <p>Me abro por completo para contaros en qué consiste la ligirofobia, cómo es vivir con un miedo extremo a los petardos, globos y ruidos estridentes, y cómo me afecta en el día a día.</p>
+                </div>
+            </div>
+
+            <!-- FILA 1 - VÍDEO 3 -->
+            <div class="video-card">
+                <div class="video-frame">
+                    <!-- Enlace embed correcto para tu tercer vídeo -->
+                    <iframe src="https://www.youtube.com/embed/QiAElw5fbo4" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h3>CÓMO SUBIR UNA RAMPA CON GRAN PENDIENTE</h3>
+                    <p>Un vídeo totalmente práctico donde os muestro la técnica, los trucos y la seguridad necesaria para afrontar y superar rampas con mucha inclinación en el día a día.</p>
+                </div>
+            </div>
+           <!-- FILA 1 - VÍDEO 4 -->
+            <div class="video-card">
+                <div class="video-frame">
+                    <!-- Enlace embed correcto para tu cuarto vídeo -->
+                    <iframe src="https://www.youtube.com/embed/AoVkw2bxk9o" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h3>CHARLANDO CON MI VECINA: SUPERANDO UN ICTUS</h3>
+                    <p>Una charla inspiradora sobre supervivencia y salud. Hablamos de su experiencia superando un ictus y un infarto, cómo detectar los primeros síntomas y los factores de riesgo clave.</p>
+                </div>
+            </div>
+
+            <!-- FILA 2 - VÍDEO 5 -->
+            <div class="video-card">
+                <div class="video-frame">
+                    <!-- Enlace embed correcto para tu quinto vídeo -->
+                    <iframe src="https://www.youtube.com/embed/zna-WUXkM_w" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h3>DELITOS DE ODIO EN LA DISCAPACIDAD</h3>
+                    <p>Ponemos el foco sobre una realidad intolerable: los delitos de odio hacia las personas con discapacidad. Analizamos la situación, concienciamos y alzamos la voz contra la discriminación.</p>
+                </div>
+            </div>
+
+            <!-- FILA 2 - VÍDEO 6 -->
+            <div class="video-card">
+                <div class="video-frame">
+                    <!-- Enlace embed correcto para tu sexto vídeo -->
+                    <iframe src="https://www.youtube.com/embed/3aJ5va49RcE" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h3>SALUD MENTAL Y PUESTO DE TRABAJO</h3>
+                    <p>Analizamos la importancia de la salud mental en el entorno laboral de las personas con discapacidad. Herramientas, derechos y claves para un bienestar integral en el trabajo.</p>
+                </div>
+            </div>
+
+            <!-- FILA 2 - VÍDEO 7 -->
+            <div class="video-card">
+                <div class="video-frame">
+                    <!-- Enlace embed correcto para tu séptimo vídeo -->
+                    <iframe src="https://www.youtube.com/embed/aNSK-uNcmCs" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h3>MI CASA NO ES MI CÁRCEL</h3>
+                    <p>Una denuncia pública tras el trágico fallecimiento de una mujer en Murcia atrapada en su propio hogar por falta de accesibilidad. Reivindicamos el derecho a una vivienda digna y libre.</p>
+                </div>
+            </div>
+
+           <!-- FILA 2 - VÍDEO 8 -->
+            <div class="video-card">
+                <div class="video-frame">
+                    <!-- Enlace embed correcto para tu octavo vídeo -->
+                    <iframe src="https://www.youtube.com/embed/gLrrj4h0egA" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h3>RECETA SALUDABLE Y ANÁLISIS DE MI NUTRICIONISTA</h3>
+                    <p>Preparamos una deliciosa torta de avena con chocolate y contamos con el análisis experto de mi nutricionista para desglosar sus propiedades y beneficios. ¡Sano y brutal!</p>
+                </div>
+            </div>
+
+        </div> </section>
+
+ <!-- CONTENEDOR FINAL AISLADO EN VIDEOS-LARGOS2.HTML -->
+  <div style="width: 100% !important; clear: both !important; display: block !important; text-align: center !important; margin: 50px 0 20px 0 !important;">
+    
+    <!-- Botón Dinámico (Negro por defecto, Rojo con cursor) -->
+    <a href="videos-largos3.html" class="btn-dinamico-video-p2" style="display: inline-block !important; color: #ffffff !important; text-decoration: none !important; padding: 15px 30px !important; font-weight: bold !important; text-transform: uppercase !important; font-size: 0.9rem !important; letter-spacing: 1px !important; font-family: Arial, sans-serif !important; margin-bottom: 40px !important; transition: background-color 0.2s ease !important;">
+      VER MÁS VÍDEOS ➔
+    </a>
+
+    <!-- Control de Estilos del Botón -->
+    <style>
+      .btn-dinamico-video-p2 {
+        background-color: #000000 !important;
+      }
+      .btn-dinamico-video-p2:hover {
+        background-color: #ff0000 !important;
+      }
+    </style>
+
+    <!-- Línea divisoria centradita -->
+    <hr style="border: none !important; border-top: 1px solid #e0e0e0 !important; width: 80% !important; margin: 0 auto 30px auto !important; clear: both !important;">
+
+    <!-- FOOTER FORZADO AL CENTRO ABSOLUTO -->
+    <footer style="display: block !important; width: 100% !important; text-align: center !important; margin: 0 auto !important; clear: both !important; font-family: Arial, sans-serif !important; font-size: 0.85rem !important; color: #000000 !important; font-weight: bold !important; text-transform: uppercase !important; letter-spacing: 0.5px !important; padding: 15px 0 !important;">
+      © 2026 BORJABACK BARRERAS AL LÍMITE - TODOS LOS DERECHOS RESERVADOS
+    </footer>
+
+  </div>
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Borjaback Barreras al Límite - Shorts</title>
+  <style>
+    /* =======================================================
+       ESTILOS DEL MENÚ INTERACTIVO PERFECTO
+       ======================================================= */
+    header { 
+      background-color: #ffffff; 
+      border-top: 2.5px solid #000000; 
+      border-bottom: 2.5px solid #000000; 
+      padding: 15px 40px; 
+      display: flex; 
+      justify-content: space-between; 
+      align-items: center; 
+      position: sticky; 
+      top: 0; 
+      z-index: 1000; 
+    }
+    
+    header h1 { 
+      font-size: 1.2rem; 
+      text-transform: uppercase; 
+      font-weight: 900; 
+      margin: 0;
+      color: #000000; 
+      font-family: Arial, sans-serif;
+    }
+    
+    nav ul { 
+      display: flex; 
+      list-style: none; 
+      gap: 20px; 
+      align-items: center; 
+      margin: 0;
+      padding: 0;
+    }
+    
+    nav ul li { 
+      position: relative; 
+    }
+    
+    nav ul li a { 
+      text-decoration: none; 
+      color: #000000; 
+      font-weight: 900; 
+      font-size: 0.8rem; 
+      text-transform: uppercase; 
+      transition: color 0.3s; 
+      font-family: Arial, sans-serif;
+    }
+    
+    nav ul li a:hover { 
+      color: #ff0000; 
+    }
+
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      background-color: #ffffff; 
+      border: 1px solid #000000; 
+      padding: 5px 0; 
+      list-style: none;
+      top: 100%;
+      left: 0;
+      z-index: 1010;
+      min-width: 150px;
+      margin: 5px 0 0 0;
+    }
+
+    .dropdown-menu li {
+      display: block;
+      margin: 0;
+    }
+
+    .dropdown-menu li a {
+      display: block;
+      color: #000000; 
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 10px 20px; 
+      text-decoration: none;
+      transition: background-color 0.15s, color 0.15s;
+    }
+
+    .dropdown-menu li a:hover {
+      background-color: #000000; 
+      color: #ffffff; 
+    }
+
+    .dropdown:hover .dropdown-menu {
+      display: block;
+    }
+
+    /* =======================================================
+       ESTILOS PARA LA REJILLA DE SHORTS (3x3)
+       ======================================================= */
+    .shorts-section {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+      font-family: Arial, sans-serif;
+    }
+
+    .shorts-section h2 {
+      font-size: 1.5rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 5px;
+      color: #000;
+      margin-top: 20px;
+    }
+
+    .shorts-subtitle {
+      font-size: 0.9rem;
+      color: #333;
+      margin-bottom: 30px;
+    }
+
+    .shorts-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .short-card {
+      background: #fff;
+      border: 1px solid #000;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .video-box {
+      width: 100%;
+      border-bottom: 1px solid #000;
+      background: #000;
+    }
+
+    .video-box iframe {
+      width: 100%;
+      display: block;
+    }
+
+    .short-info {
+      padding: 20px;
+      text-align: left;
+    }
+
+    .short-info h3 {
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      margin: 0;
+      color: #000;
+      font-weight: bold;
+      line-height: 1.4;
+    }
+
+    /* =======================================================
+       BOTONERA DE PAGINACIÓN CORREGIDA Y CENTRADA AL 100%
+       ======================================================= */
+    .pagination-container {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin: 50px 0;
+      clear: both;
+    }
+
+    .pagination {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .page-btn {
+      display: inline-block;
+      text-decoration: none;
+      color: #000000;
+      background-color: #ffffff;
+      border: 2px solid #000000;
+      padding: 8px 16px;
+      font-weight: bold;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      transition: background-color 0.15s, color 0.15s;
+    }
+
+    .page-btn:hover {
+      background-color: #000000;
+      color: #ffffff;
+    }
+
+    .page-btn.active {
+      background-color: #000000;
+      color: #ffffff;
+      cursor: default;
+    }
+
+    .page-btn.disabled {
+      opacity: 0.3;
+      pointer-events: none;
+      cursor: default;
+    }
+
+    @media (max-width: 768px) {
+      .shorts-grid {
+        grid-template-columns: 1fr;
+      }
+      header {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+      }
+      nav ul {
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <h1>BORJABACK BARRERAS AL LIMITE</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="entrevistas.html">Entrevistas</a></li>
+        <li class="dropdown">
+          <a href="#">Videos 🔻</a>
+          <ul class="dropdown-menu">
+            <li><a href="videos-largos.html">VIDEOS LARGOS</a></li>
+            <li><a href="shorts.html">SHORTS</a></li>
+          </ul>
+        </li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- CONTENIDO SHORTS -->
+  <section class="shorts-section">
+    <h2>MIS MEJORES SHORTS</h2>
+    <p class="shorts-subtitle">Contenido rápido y al grano. ¡Haz clic para verlos!</p>
+
+    <div class="shorts-grid">
+      
+      <!-- SHORT 1 -->
+      <div class="short-card">
+        <div class="video-box">
+          <iframe height="315" src="https://www.youtube.com/embed/NXL09ZwcplY" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="short-info">
+          <h3>ESTE CHICO CIEGO NUNCA FALLA EN EL JUEGO DE LOS 3 DEDOS</h3>
+        </div>
+      </div>
+
+      <!-- SHORT 2 -->
+      <div class="short-card">
+        <div class="video-box">
+          <iframe height="315" src="https://www.youtube.com/embed/IkK1bp1o4_I" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="short-info">
+          <h3>CUANDO ENTRAS A CLASE Y ERES SIRI</h3>
+        </div>
+      </div>
+
+      <!-- SHORT 3 -->
+      <div class="short-card">
+        <div class="video-box">
+          <iframe height="315" src="https://www.youtube.com/embed/0rHXwnxm_A8" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="short-info">
+          <h3>ESTO ES NORMAL O SE NOS ESTA YENDO LA OLLA</h3>
+        </div>
+      </div>
+
+      <!-- SHORT 4 -->
+      <div class="short-card">
+        <div class="video-box">
+          <iframe height="315" src="https://www.youtube.com/embed/x1ZBSBYk9xM" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="short-info">
+          <h3>GOL DEL VALENCIA TIO</h3>
+        </div>
+      </div>
+
+      <!-- SHORT 5 -->
+      <div class="short-card">
+        <div class="video-box">
+          <iframe height="315" src="https://www.youtube.com/embed/jeGYetBu4L8" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="short-info">
+          <h3>EL VOLO PERO SU PERRO GUIA NO</h3>
+        </div>
+      </div>
+
+      <!-- SHORT 6 -->
+      <div class="short-card">
+        <div class="video-box">
+          <iframe height="315" src="https://www.youtube.com/embed/axHZofo4HGg" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="short-info">
+          <h3>MIENTRAS LOS POLÍTICOS HABLAN</h3>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- CONTENEDOR EXTRA QUE OBLIGA AL CENTRADO TOTAL -->
+    <div class="pagination-container">
+      <div class="pagination">
+        <a href="#" class="page-btn disabled">← Anterior</a>
+        <a href="shorts.html" class="page-btn active">1</a>
+        <a href="shorts2.html" class="page-btn">2</a>
+        <a href="shorts3.html" class="page-btn">3</a>
+        <a href="shorts2.html" class="page-btn">Siguiente →</a>
+      </div>
+    </div>
+
+  </section>
+<!-- FOOTER FORZADO AL MEDIO EXACTO -->
+  <div style="width: 100% !important; clear: both !important; display: block !important; text-align: center !important; margin: 40px auto 20px auto !important; float: none !important;">
+    <hr style="border: none !important; border-top: 1px solid #e0e0e0 !important; width: 80% !important; margin: 0 auto 30px auto !important; clear: both !important; float: none !important;">
+    <div style="display: block !important; width: 100% !important; text-align: center !important; clear: both !important; float: none !important; margin: 0 auto !important; padding: 15px 0 !important;">
+      <p style="font-family: Arial, sans-serif !important; font-size: 0.85rem !important; color: #000000 !important; font-weight: bold !important; text-transform: uppercase !important; letter-spacing: 0.5px !important; margin: 0 !important; display: inline-block !important;">
+        © 2026 BORJABACK BARRERAS AL LÍMITE - TODOS LOS DERECHOS RESERVADOS
+      </p>
+    </div>
+  </div>
+</body>
+</html>
