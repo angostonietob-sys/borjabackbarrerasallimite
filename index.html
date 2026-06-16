@@ -54,7 +54,7 @@
 
         /* CONTENIDO PRINCIPAL */
         .contenedor-principal { max-width: 1100px; margin: 50px auto; display: flex; gap: 40px; padding: 0 25px; align-items: flex-start; }
-        .promo-tio { flex: 1; background: #000; color: #fff; padding: 20px; border-left: 6px solid #ff0000; position: sticky; top: 100px; }
+        .promo-tio { flex: 1; background: #000; color: #fff; padding: 20px; border-left: 6px solid #ff0000; position: sticky; top: 100px; display: flex; flex-direction: column; gap: 15px; }
         .promo-tio h3 { font-size: 1.1rem; font-weight: 900; margin-bottom: 10px; }
         .btn-pato { display: block; text-align: center; background: #fff; color: #000; text-decoration: none; padding: 10px; font-weight: 900; font-size: 0.75rem; margin-top: 15px; }
 
@@ -111,93 +111,80 @@
 
     <div class="contenedor-principal">
         <aside class="promo-tio">
-            <h4 style="color: #ff0000; font-size: 0.6rem; text-transform: uppercase; margin-bottom: 5px;">PROYECTO AMIGO</h4>
-            <h3>LAS AVENTURAS DEL PATO RUTI Y SUS KOMPIS</h3>
-            <p style="font-size: 0.8rem; color: #ccc;">Historias únicas y divertidas.</p>
-            <a href="https://elpatorutiysuskompis.github.io/LAS-AVENTURAS-DEL-PATO-RUTI-Y-SUS-KOMPIS/" target="_blank" class="btn-pato">VISITAR</a>
+            <div>
+                <h4 style="color: #ff0000; font-size: 0.6rem; text-transform: uppercase; margin-bottom: 5px;">PROYECTO AMIGO</h4>
+                <h3>LAS AVENTURAS DEL PATO RUTI Y SUS KOMPIS</h3>
+                <p style="font-size: 0.8rem; color: #ccc;">Historias únicas y divertidas.</p>
+                <a href="https://elpatorutiysuskompis.github.io/LAS-AVENTURAS-DEL-PATO-RUTI-Y-SUS-KOMPIS/" target="_blank" class="btn-pato">VISITAR</a>
+            </div>
+
+            <!-- CONTADOR LIMPIO EN CERO ABSOLUTO -->
+            <div style="background-color: #d1b894; padding: 15px; border-radius: 12px; text-align: center; width: 100%; margin-top: 15px; box-shadow: inset 0 0 5px rgba(0,0,0,0.1);">
+                <p style="color: #000000; font-family: 'Segoe UI', Arial, sans-serif; font-weight: 900; font-size: 11px; letter-spacing: 0.5px; margin-bottom: 5px; text-transform: uppercase;">VISITAS WEB:</p>
+                <strong id="contador-visitas" style="color: #000000; font-family: 'Segoe UI', Arial, sans-serif; font-size: 24px; font-weight: 900; display: block; line-height: 1;">0</strong>
+            </div>
         </aside>
-       <div class="short-lateral-sticky" id="short-temporal">
-    
-    <div style="width: 100%; background-color: #333; height: 5px; border-radius: 3px; margin-bottom: 8px; overflow: hidden;">
-        <div id="barra-progreso" style="width: 100%; height: 100%; background-color: #ff0000; transition: width 1s linear;"></div>
-    </div>
-    
-    <p style="margin: 0 0 8px 0; font-size: 13px; font-weight: bold; font-family: Arial, sans-serif;">
-        ⏱️ ¡Desaparece en <span id="contador-segundos">30</span>s!
-    </p>
-    
-    <iframe id="iframe-short" width="100%" height="380" 
-            src="https://www.youtube.com/embed/00JMVCht_KI" 
-            frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-            allowfullscreen 
-            style="border-radius: 4px; max-width: 220px; display: block; margin: 0 auto;">
-    </iframe>
-</div>
+
         <main class="columna-historia">
             <div class="foto-perfil"><img src="fotoborja2.jpg" alt="Borjaback"></div>
             <h2 class="titulo-historia">Mi Historia al Límite</h2>
             <div class="texto-largo">
-                <p>Mi camino empezó con un reto desde el minuto cero. Mi nacimiento no fue como el de los demás, y desde ese primer aliento, la vida me puso delante una serie de barreras que, lejos de frenarme, terminaron por definir quién soy hoy. A través de este proyecto, busco convertir cada obstáculo en un trampolín, demostrando que los límites solo existen para quienes no se atreven a desafiarlos.</p>
+                <p>Mi camino empezó con un reto desde el minuto cero. Mi nacimiento no fue como el de los demás, and desde ese primer aliento, la vida me puso delante una serie de barreras que, lejos de frenarme, terminaron por definir quién soy hoy. A través de este proyecto, busco convertir cada obstáculo en un trampolín, demonstrating que los límites solo existen para quienes no se atreven a desafiarlos.</p>
                 
-                <p>El objetivo de este proyecto es ponerle voz a lo que muchos prefieren ignorar: la realidad de la accesibilidad en nuestras calles y en nuestra sociedad. En mis vídeos, muestro lo que es la accesibilidad real frente a la que nos intentan vender. Quiero que el mundo entienda que no pedimos favores, pedimos derechos, y que una ciudad diseñada para todos es, en realidad, una ciudad mejor para cualquiera.</p>
+                <p>El objetivo de este proyecto es ponerle voz a lo que muchos prefieren ignorar: la realidad de la accesibilidad en nuestras calles and en nuestra sociedad. En mis vídeos, muestro lo que es la accesibilidad real frente a la que nos intentan vender. Quiero que el mundo entienda que no pedimos favores, pedimos derechos, y que una ciudad diseñada para todos es, en realidad, una ciudad mejor para cualquiera.</p>
                 
                 <p>Nada de esto sería posible sin los pilares que me sostienen. Vengo de una familia luchadora; crecer junto a mi hermano me enseñó el verdadero significado de la palabra resistencia. Y en este viaje, no estoy solo. Marta fue esa chispa que terminó de darme el impulso necesario, junto a Dani, Jose y Pablo, mis amigos más fieles que siempre están al pie del cañón, apoyando cada nueva aventura de Barreras al Límite.</p>
             </div>
         </main>
     </div>
+
     <footer>
         <p>Pagina Creada por Borja Angosto Nieto</p>
         <p>Todos los derechos reservados © 2026</p>
     </footer>
 
-    
-<script>
-    window.addEventListener('DOMContentLoaded', (event) => {
-        // Ponemos 600 segundos (10 minutos)
-        let tiempoRestante = 600; 
-        const tiempoTotal = tiempoRestante;
-        
-        const elementoShort = document.getElementById('short-temporal');
-        const textoContador = document.getElementById('contador-segundos');
-        const barraProgreso = document.getElementById('barra-progreso');
-        
-        // Ajustamos el texto inicial para que marque los 600s desde el primer instante
-        if (textoContador) {
-            textoContador.textContent = tiempoRestante;
-        }
-        
-        const cuentaAtras = setInterval(() => {
-            tiempoRestante--;
-            
-            if (textoContador) {
-                textoContador.textContent = tiempoRestante;
+    <!-- LIBRERÍAS OFICIALES DE GOOGLE FIREBASE -->
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-database-compat.js"></script>
+
+    <script>
+        window.addEventListener('DOMContentLoaded', (event) => {
+            const textoVisitas = document.getElementById('contador-visitas');
+
+            const firebaseConfig = {
+                apiKey: "AIzaSyBzhp2s126Boj0QZgY79z5rKccqvekfttc",
+                authDomain: "borjaback-ccade.firebaseapp.com",
+                databaseURL: "https://borjaback-ccade-default-rtdb.europe-west1.firebasedatabase.app",
+                projectId: "borjaback-ccade",
+                storageBucket: "borjaback-ccade.appspot.com",
+                messagingSenderId: "4790345471",
+                appId: "1:4790345471:web:7ace0028f38558d77936ca"
+            };
+
+            if (!firebase.apps.length) {
+                firebase.initializeApp(firebaseConfig);
             }
-            
-            if (barraProgreso) {
-                let porcentaje = (tiempoRestante / tiempoTotal) * 100;
-                barraProgreso.style.width = porcentaje + "%";
-            }
-            
-            if (tiempoRestante <= 0) {
-                clearInterval(cuentaAtras);
-                
-                if (elementoShort) {
-                    elementoShort.style.transition = "all 1s ease-in-out";
-                    elementoShort.style.opacity = "0";
-                    elementoShort.style.transform = "translateY(50px)";
-                    
-                    setTimeout(() => {
-                        elementoShort.style.display = "none";
-                    }, 1000);
-                }
-            }
-        }, 1000);
+            const database = firebase.database();
+            const contadorRef = database.ref('visitas_totales');
+
+            // Sumador real arrancando de cero
+            contadorRef.transaction((valorActual) => {
+              // ESCUDO: Solo suma la visita si la web NO está ejecutándose en tu ordenador local
+if (window.location.hostname !== "127.0.0.1" && window.location.hostname !== "localhost") {
+    contadorRef.transaction((valorActual) => {
+        return (valorActual || 0) + 1; 
     });
-</script>
+}
+            });
 
-</body>
-</html>
-
+            // Escucha activa en vivo
+            contadorRef.on('value', (snapshot) => {
+                const visitas = snapshot.val() || 0;
+                if (textoVisitas) {
+                    textoVisitas.textContent = visitas.toLocaleString('es-ES');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
